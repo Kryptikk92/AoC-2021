@@ -18,7 +18,8 @@ public class AOC1 {
         part2();
     }
 
-    public static List<Integer> getListInteger(InputStream input) throws IOException {
+    public static List<Integer> getListInteger(String inputName) throws IOException {
+        InputStream input = PuzzleInput.getInput(inputName);
         List<Integer> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8))) {
             for (String line; (line = reader.readLine()) != null; ) {
@@ -29,8 +30,7 @@ public class AOC1 {
     }
 
     private static void part1() throws IOException {
-        InputStream input = PuzzleInput.getInput("Input1.txt");
-        List<Integer> list = getListInteger(input);
+        List<Integer> list = getListInteger("Input1.txt");
         AtomicInteger counter = new AtomicInteger();
         IntStream.range(0, list.size() - 1).forEach(i -> {
                     if (list.get(i) < list.get(i + 1)) {
@@ -42,8 +42,7 @@ public class AOC1 {
     }
 
     private static void part2() throws IOException {
-        InputStream input = PuzzleInput.getInput("Input1.txt");
-        List<Integer> list = getListInteger(input);
+        List<Integer> list = getListInteger("Input1.txt");
         List<Integer> sums = slidingSum(list, 3).toList();
         AtomicInteger counter = new AtomicInteger();
         IntStream.range(0, sums.size() - 1)
