@@ -13,10 +13,10 @@ public class SlidingWindowDemo {
         System.out.println("Sliding summing window of 3 over " + listOfIntegers);
         slidingOperator(listOfIntegers, 3, sum).forEach(System.out::println);
 
-        List<String> listOfStrings = List.of("A", "B", "C", "D", "E");
+        List<String> listOfStrings = List.of("A", "B", "C", "D", "E", "F", "G", "H");
         Function<List<String>, String> concat = list -> list.stream().reduce("", String::concat);
         System.out.println("Sliding concat window of 3 over " + listOfStrings);
-        slidingOperator(listOfStrings, 3, concat).forEach(System.out::println);
+        slidingOperator(listOfStrings, 4, concat).forEach(System.out::println);
     }
 
     private static <T> Stream<T> slidingOperator(List<T> list, int size, Function<List<T>, T> operation) {
