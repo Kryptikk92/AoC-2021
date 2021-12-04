@@ -23,18 +23,22 @@ public class Board {
         boolean won = false;
         for (int x = 0; x < 5; x++) {
             int finalX = x;
-            won = IntStream.range(0, 4).mapToObj(y -> boardCells.get(finalX + y*5).isChosen()).allMatch(b -> b);
+            won = IntStream.range(0, 5).mapToObj(y -> boardCells.get(finalX + y*5).isChosen()).allMatch(b -> b);
             if (won)
                 break;
         }
         if (!won) {
             for (int y = 0; y < 5; y++) {
                 int finalY = y;
-                won = IntStream.range(0, 4).mapToObj(x -> boardCells.get(x + finalY*5).isChosen()).allMatch(b -> b);
+                won = IntStream.range(0, 5).mapToObj(x -> boardCells.get(x + finalY*5).isChosen()).allMatch(b -> b);
                 if (won)
                     break;
             }
         }
         return won;
+    }
+
+    public List<BoardCell> getUnmarked() {
+        return boardCells.stream().filter(c -> !c.isChosen()).toList();
     }
 }

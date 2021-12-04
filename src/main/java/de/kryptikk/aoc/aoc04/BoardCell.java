@@ -6,7 +6,7 @@ public class BoardCell {
     private boolean chosen = false;
 
     public BoardCell(Integer i) {
-        this.i = 0;
+        this.i = i;
     }
 
     public int getI() {
