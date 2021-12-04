@@ -1,4 +1,6 @@
-package de.kryptikk.aoc;
+package de.kryptikk.aoc.aoc02;
+
+import de.kryptikk.aoc.PuzzleInput;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class AOC2 {
+public class AOC02 {
 
     public static void main(String[] args) throws IOException {
         part1();
