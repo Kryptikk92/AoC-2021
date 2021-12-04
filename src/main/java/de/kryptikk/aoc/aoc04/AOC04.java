@@ -43,7 +43,8 @@ public class AOC04 {
         }
         for (int i : numbers) {
             for (Board b : boards)
-                b.choose(i);
+                if (b.choose(i))
+                    System.out.println("Something won");
         }
     }
 
