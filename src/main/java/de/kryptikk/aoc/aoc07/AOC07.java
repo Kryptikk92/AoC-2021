@@ -1,7 +1,7 @@
 package de.kryptikk.aoc.aoc07;
 
 import de.kryptikk.aoc.PuzzleInput;
-import de.kryptikk.aoc.aoc04.Pair;
+import de.kryptikk.aoc.Pair;
 
 import java.io.BufferedReader;
 import java.io.IOException;

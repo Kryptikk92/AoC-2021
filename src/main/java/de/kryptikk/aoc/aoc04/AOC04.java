@@ -1,5 +1,6 @@
 package de.kryptikk.aoc.aoc04;
 
+import de.kryptikk.aoc.Pair;
 import de.kryptikk.aoc.PuzzleInput;
 
 import java.io.BufferedReader;
