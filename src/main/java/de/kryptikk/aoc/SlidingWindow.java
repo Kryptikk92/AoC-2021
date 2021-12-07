@@ -5,7 +5,7 @@ import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class SlidingWindowDemo {
+public class SlidingWindow {
 
     public static void main(String[] args) {
         List<Integer> listOfIntegers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
