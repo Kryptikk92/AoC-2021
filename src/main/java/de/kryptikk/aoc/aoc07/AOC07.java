@@ -2,7 +2,6 @@ package de.kryptikk.aoc.aoc07;
 
 import de.kryptikk.aoc.PuzzleInput;
 import de.kryptikk.aoc.aoc04.Pair;
-import de.kryptikk.aoc.aoc06.Lanternfish;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,7 +37,7 @@ public class AOC07 {
         List<Integer> crabs = Arrays.stream(input.split(",")).map(Integer::parseInt).toList();
         int max = crabs.stream().max(Comparator.naturalOrder()).orElseThrow();
         int min = crabs.stream().min(Comparator.naturalOrder()).orElseThrow();
-        Pair<Integer, Integer> minimum = IntStream.range(min, max+1)
+        Pair<Integer, Integer> minimum = IntStream.range(min, max + 1)
                 .mapToObj(i -> new Pair<>(i, crabs.stream().map(c -> Math.abs(c - i)).reduce(0, Integer::sum)))
                 .min(Comparator.comparingInt(Pair::second)).orElseThrow();
         System.out.printf("Position %d: %d\n", minimum.first(), minimum.second());
@@ -49,8 +48,8 @@ public class AOC07 {
         List<Integer> crabs = Arrays.stream(input.split(",")).map(Integer::parseInt).toList();
         int max = crabs.stream().max(Comparator.naturalOrder()).orElseThrow();
         int min = crabs.stream().min(Comparator.naturalOrder()).orElseThrow();
-        Pair<Integer, Long> minimum = IntStream.range(min, max+1)
-                .mapToObj(i -> new Pair<>(i, crabs.stream().map(c -> Math.abs(c - i)).map(n -> Math.round(0.5*n*(n+1))).reduce(0L, Long::sum)))
+        Pair<Integer, Long> minimum = IntStream.range(min, max + 1)
+                .mapToObj(i -> new Pair<>(i, crabs.stream().map(c -> Math.abs(c - i)).map(n -> Math.round(0.5 * n * (n + 1))).reduce(0L, Long::sum)))
                 .min(Comparator.comparingLong(Pair::second)).orElseThrow();
         System.out.printf("Position %d: %d\n", minimum.first(), minimum.second());
     }
